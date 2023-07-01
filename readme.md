@@ -10,12 +10,25 @@
 ```terraform
 terraform init
 
-terraform plan #Show the plan of resources will be created
+terraform plan #Show the plan of resources will be created/changed or deleted
 #or using parallelism
 terraform plan -parallelism=4
 
 terraform plan -out plan.out #write plan output to plan.out
 terraform show -json plan.out > plan.json #show output in json format
+
+terraform plan -var 'name=value'
+terraform plan -var "name=va\"lue"
+terraform plan -var 'name=["a", "b", "c"]'
+
+terraform apply
+terraform apply -auto-approve
+terraform apply -var-file=test.tfvars
+
+terraform destroy
+terraform plan -destroy
+terraform apply -destroy
+
 ```
 
 
